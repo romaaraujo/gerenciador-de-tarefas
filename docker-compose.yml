@@ -1,0 +1,37 @@
+version: "3"
+services:
+  laravel:
+    build: 
+      context: .
+    ports:
+      - 8080:80
+    networks:
+      - api_network
+    depends_on:
+      - mysql
+    links:
+      - mysql
+
+  mysql:
+    image: mysql
+    restart: always
+    environment:
+        MYSQL_ROOT_PASSWORD: root_password
+        MYSQL_DATABASE: api_database
+        MYSQL_USER: user
+        MYSQL_PASSWORD: password
+    volumes:
+      - /etc/init.sql:/data/application/init.sql
+      - db_data:/var/lib/mysql
+    ports:
+      - 3306:3306
+    networks:
+      - api_network
+
+volumes:
+  db_data:
+    driver: local
+
+networks:
+  api_network:
+    driver: bridge

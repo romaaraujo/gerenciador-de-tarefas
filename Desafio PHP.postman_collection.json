@@ -1,0 +1,306 @@
+{
+	"info": {
+		"_postman_id": "a28bb8c7-df40-46e5-9cd6-ecb8887cc939",
+		"name": "Desafio PHP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13529421"
+	},
+	"item": [
+		{
+			"name": "Cadastrar Tarefa",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Test 123",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "approved",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "file_url",
+							"value": "http://www.lyberty.com/encyc/articles/tech/dot_url_format_-_an_unofficial_guide.html",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "test desc",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/api/task",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Tarefa",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Test ABC",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "backlog",
+							"type": "text"
+						},
+						{
+							"key": "file_url",
+							"value": "http://www.lyberty.com/encyc/articles/tech/dot_url_format_-_an_unofficial_guide.html",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "description",
+							"value": "test desc A",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/api/task/779cc12a-f0fc-4b32-9255-5281b67cd852",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"task",
+						"779cc12a-f0fc-4b32-9255-5281b67cd852"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar Status da Tarefa",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "status",
+							"value": "approved",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/api/task/779cc12a-f0fc-4b32-9255-5281b67cd852/status",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"task",
+						"779cc12a-f0fc-4b32-9255-5281b67cd852",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar e Adicionar uma Tag para uma Tarefa",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "tag_name",
+							"value": "Tag Teste",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/api/task/0d1aad40-98ff-452d-adf5-dc52e8691aae/tag",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"task",
+						"0d1aad40-98ff-452d-adf5-dc52e8691aae",
+						"tag"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar todas as Tarefas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{host}}/api/task/",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"task",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exibir link da tarefa aprovada",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{host}}/api/task/779cc12a-f0fc-4b32-9255-5281b67cd852/file_url",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"task",
+						"779cc12a-f0fc-4b32-9255-5281b67cd852",
+						"file_url"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhos:8080",
+			"type": "string"
+		}
+	]
+}

@@ -104,13 +104,15 @@
 <h2>Ambiente</h2>
 <hr/>
 <h3>Docker</h3>
-```bash
+
+```bash 
 # Renomeie .env.example para .env
 # Execute o comando na raiz do projeto
 
 $ docker-compose up -d
 ```
 <h3>Servidor Embutido PHP</h3>
+
 ```bash
 # Renomeie .env.example para .env
 # Execute os comandos a seguir na raiz do projeto
@@ -130,6 +132,7 @@ $ php artisan serve --port=8080
 <hr/>
 
 <h3>Unidade</h3>
+
 ```bash
 # Execute o comando na raiz do projeto
 
